@@ -1,47 +1,45 @@
 # Card Games - TB
 
-## Project Overview
+A collection of card game implementations in Java, starting with a console-based Blackjack game.
 
-A console-based Blackjack card game implementation in Java, developed as part of the INFT4000 course at NSCC. This project demonstrates object-oriented programming principles, game logic implementation, and Java best practices.
+## Project Purpose
 
-## Problem Statement
+This project serves as a learning platform for software development practices including version control, project management, documentation, and collaborative development workflows. The initial implementation is a console-based Blackjack (21) card game that demonstrates object-oriented programming principles in Java.
 
-Many developers learning Java struggle to apply object-oriented concepts in practical scenarios. This project provides a hands-on implementation of a classic card game (Blackjack/21) that demonstrates:
+### Problem Statement
 
-- Class design and encapsulation
-- Game state management
-- User input handling
-- Random number generation and shuffling algorithms
-- Score calculation logic
+Card games are a universal form of entertainment and an excellent domain for learning programming concepts. This project aims to:
+- Provide a working implementation of classic card games
+- Demonstrate clean code architecture and documentation practices
+- Serve as a foundation for learning Git workflows and GitHub features
+- Enable collaborative development and code review practices
 
 ## Technologies Used
 
-- **Java 17** - Primary programming language
-- **IntelliJ IDEA Ultimate** - Integrated Development Environment
-- **Git** - Version control
-- **GitHub** - Repository hosting and collaboration
-- **VS Code** - Alternative code editor with Java extensions
+- **Java 17+** - Primary programming language
+- **Git** - Version control system
+- **GitHub** - Code hosting and collaboration platform
+- **VS Code** - Integrated development environment
+- **Maven/Gradle** (optional) - Build automation and dependency management
 
 ## Features
 
-- ✅ Full Blackjack game implementation
-- ✅ Player vs Dealer gameplay
-- ✅ Deck shuffling and card dealing
-- ✅ Score calculation with Ace handling
-- ✅ Hit/Stand player actions
-- ✅ Automatic dealer logic (hits until 17+)
-- ✅ Win/Loss determination
-- ✅ Multiple rounds support
+### Blackjack Game
+- Full implementation of Blackjack rules
+- Player vs. Dealer gameplay
+- Hit/Stand decision making
+- Automatic dealer AI (hits until 17+)
+- Score calculation with Ace handling
+- Multiple rounds with play-again option
 
 ## Setup Instructions
 
 ### Prerequisites
-
 - Java Development Kit (JDK) 17 or higher
-- Git
-- A Java IDE (IntelliJ IDEA, Eclipse, or VS Code with Java extensions)
+- Git installed on your system
+- VS Code (recommended) or any Java IDE
 
-### Installation Steps
+### Installation
 
 1. **Clone the repository**
    ```bash
@@ -49,122 +47,96 @@ Many developers learning Java struggle to apply object-oriented concepts in prac
    cd Special-Topics-assignments
    ```
 
-2. **Compile the Java files**
+2. **Verify Java installation**
+   ```bash
+   java --version
+   ```
+
+3. **Compile the game**
    ```bash
    cd src
    javac *.java
    ```
 
-3. **Run the game**
+4. **Run the game**
    ```bash
    java BlackjackGame
    ```
 
-### Using VS Code
+### VS Code Setup
 
-1. Open the project folder in VS Code
-2. Install the "Extension Pack for Java" if not already installed
-3. Open `src/BlackjackGame.java`
-4. Click the "Run" button above the `main` method or press `F5`
-
-### Using IntelliJ IDEA
-
-1. Open IntelliJ IDEA
-2. Select "Open" and navigate to the project directory
-3. Right-click on `BlackjackGame.java` in the `src` folder
-4. Select "Run 'BlackjackGame.main()'"
+If using VS Code, the repository includes configuration for Java development:
+- Open the folder in VS Code
+- Install the "Extension Pack for Java" from Microsoft
+- The `.vscode` folder contains launch and task configurations
 
 ## How to Play
 
-1. Run the program
-2. You'll be dealt two cards, and the dealer gets two cards (one visible)
-3. Choose to **Hit** (h) to draw another card or **Stand** (s) to keep your current hand
-4. Try to get as close to 21 as possible without going over
-5. If you go over 21, you bust and lose
-6. The dealer must hit until reaching 17 or higher
-7. The player with the score closest to 21 without busting wins
+1. Run the BlackjackGame class
+2. You'll be dealt two cards, and can see one of the dealer's cards
+3. Choose to **Hit** (draw another card) or **Stand** (keep current hand)
+4. Try to get as close to 21 without going over
+5. Dealer plays automatically after your turn
+6. Winner is determined by who has the higher score without busting
 
 ## Extending the Project
 
-This project is designed to be extensible. Here are some ideas for enhancement:
+This project is designed to be extended in several ways:
 
-### Beginner Extensions
-- Add bet tracking and player balance
-- Implement splitting pairs
-- Add double down functionality
-- Create different difficulty levels
+### Adding New Card Games
+1. Create new game classes in `src/` directory
+2. Reuse existing `Card`, `Deck`, and `Player` classes
+3. Implement game-specific rules and logic
+4. Examples: Poker, Go Fish, War, Crazy Eights
 
-### Intermediate Extensions
-- Implement multiple players
-- Add a GUI using JavaFX or Swing
-- Create different card game variations (Poker, Go Fish, etc.)
-- Add save/load game state functionality
+### Enhancing Blackjack
+- Add betting system with virtual currency
+- Implement split and double-down options
+- Add insurance bet when dealer shows Ace
+- Multi-player support
+- Save/load game state
+- Add statistics tracking
 
-### Advanced Extensions
-- Implement network multiplayer
-- Add AI opponents with different strategies
-- Create a web-based version using Spring Boot
-- Add card counting detection
-- Implement authentication and user profiles
+### Technical Improvements
+- Implement a GUI using JavaFX or Swing
+- Add unit tests with JUnit
+- Create a REST API for multiplayer games
+- Add database persistence for player profiles
+- Implement AI with different difficulty levels
 
-### How to Contribute Extensions
-
-1. Fork this repository
-2. Create a feature branch (`git checkout -b feature/new-game`)
-3. Make your changes following the coding standards in [CONTRIBUTING.md](CONTRIBUTING.md)
-4. Test thoroughly
-5. Submit a pull request with a clear description
-
-## Project Structure
-
+### Project Structure
 ```
-cardgames-TB/
-├── README.md                # This file
-├── LICENSE                  # MIT License
-├── CHANGELOG.md             # Version history
-├── CONTRIBUTING.md          # Contribution guidelines
-├── CODE_OF_CONDUCT.md       # Community standards
-│
-├── src/                     # Source code
-│   ├── BlackjackGame.java   # Main game class
-│   ├── Deck.java            # Deck management
-│   ├── Card.java            # Card representation
-│   └── Player.java          # Player/Dealer logic
-│
-├── docs/                    # Documentation
-│   ├── ARCHITECTURE.md      # System architecture
-│   ├── AI_USAGE.md          # AI assistance documentation
-│   └── SETUP_GUIDE.md       # Detailed setup instructions
-│
-└── .vscode/                 # VS Code configuration
-    └── settings.json        # Java project settings
+cardgames-tb/
+├── src/              # Source code directory
+├── docs/             # Additional documentation
+├── .vscode/          # VS Code configuration
+├── README.md         # This file
+├── LICENSE           # Project license
+├── CONTRIBUTING.md   # Contribution guidelines
+└── CHANGELOG.md      # Version history
 ```
 
-## Credits
+## Contributing
 
-- **Original Tutorial**: [Console Blackjack in Java (21) - Kevin's Guides](https://kevinsguides.com/guides/code/java/blackjack)
-- **Developer**: Tom Burchell (W0516036)
-- **Course**: INFT4000 - Special Topics in IT
-- **Institution**: NSCC COGS - IT Programming
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-The original tutorial content is used with attribution as per educational fair use.
-
-## Contact
-
-- **GitHub**: [@Anaxagorius](https://github.com/Anaxagorius)
-- **Organization**: [NSCC COGS IT Programming Team](https://github.com/NSCC-AVC-PROG2200)
-
 ## Acknowledgments
 
-- Kevin's Guides for the excellent Blackjack tutorial
-- NSCC instructors and classmates for feedback and support
-- JetBrains for IntelliJ IDEA
-- Oracle for the Java Development Kit
+- Original Blackjack tutorial: [Console Blackjack in Java (21) - Kevin's Guides](https://kevinsguides.com/guides/code/java/blackjack)
+- Created as part of NSCC COGS IT Programming coursework
+- Course: INFT4000 - Special Topics
+
+## Author
+
+**Tom Burchell (TB)**  
+Student ID: W0516036  
+NSCC - COGS IT Programming  
+February 2026
 
 ---
 
-**Last Updated**: February 2026
+*Last Updated: 2026-02-13*
