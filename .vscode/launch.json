@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch BlackjackGame",
+            "request": "launch",
+            "mainClass": "BlackjackGame",
+            "projectName": "Special-Topics-assignments",
+            "cwd": "${workspaceFolder}/src"
+        },
+        {
+            "type": "java",
+            "name": "Debug BlackjackGame",
+            "request": "launch",
+            "mainClass": "BlackjackGame",
+            "projectName": "Special-Topics-assignments",
+            "cwd": "${workspaceFolder}/src",
+            "console": "integratedTerminal"
+        }
+    ]
+}
