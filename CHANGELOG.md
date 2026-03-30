@@ -1,1 +1,38 @@
-# Changelog\n\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n## [Unreleased]\n\n### Added\n- Initial project setup\n- Repository documentation (README, LICENSE, CONTRIBUTING)\n- Blackjack game implementation\n\n## [0.1.0] - 2026-02-13\n\n### Added\n- Console-based Blackjack game\n- Player vs Dealer gameplay\n- Hit/Stand mechanics\n- Automatic dealer AI\n- Score calculation with Ace handling\n- Play again functionality\n- Complete project documentation\n- MIT License\n- Contributing guidelines\n- Code of Conduct\n\n### Technical\n- Java 17+ implementation\n- Object-oriented design with Card, Deck, Player classes\n- VS Code configuration\n\n[Unreleased]: https://github.com/Anaxagorius/Special-Topics-assignments/compare/v0.1.0...HEAD\n[0.1.0]: https://github.com/Anaxagorius/Special-Topics-assignments/releases/tag/v0.1.0
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+### Added
+- Betting system with virtual currency (player starts with $100 per session)
+- Statistics tracking: wins, losses, and ties displayed at end of session
+- Input validation with clear error messages for invalid hit/stand input
+- `Player` class overloaded constructor accepting an initial balance
+- `Player.getBalance()`, `addBalance()`, and `deductBalance()` methods
+- 8 new unit tests covering `Player` balance management
+
+## [0.1.0] - 2026-02-13
+
+### Added
+- Console-based Blackjack game
+- Player vs Dealer gameplay
+- Hit/Stand mechanics
+- Automatic dealer AI
+- Score calculation with Ace handling
+- Play again functionality
+- Complete project documentation
+- MIT License
+- Contributing guidelines
+- Code of Conduct
+
+### Technical
+- Java 17+ implementation
+- Object-oriented design with Card, Deck, Player classes
+- VS Code configuration
+
+[Unreleased]: https://github.com/Anaxagorius/Special-Topics-assignments/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/Anaxagorius/Special-Topics-assignments/releases/tag/v0.1.0

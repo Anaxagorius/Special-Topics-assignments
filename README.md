@@ -31,6 +31,9 @@ Card games are a universal form of entertainment and an excellent domain for lea
 - Automatic dealer AI (hits until 17+)
 - Score calculation with Ace handling
 - Multiple rounds with play-again option
+- **Betting system** with virtual currency (start with $100)
+- **Statistics tracking** — wins, losses, and ties displayed at end of session
+- **Input validation** with clear error messages for invalid input
 
 ## Setup Instructions
 
@@ -97,12 +100,12 @@ This project is designed to be extended in several ways:
 4. Examples: Poker, Go Fish, War, Crazy Eights
 
 ### Enhancing Blackjack
-- Add betting system with virtual currency
+- ~~Add betting system with virtual currency~~ ✅ Implemented
 - Implement split and double-down options
 - Add insurance bet when dealer shows Ace
 - Multi-player support
 - Save/load game state
-- Add statistics tracking
+- ~~Add statistics tracking~~ ✅ Implemented
 
 ### Technical Improvements
 - Implement a GUI using JavaFX or Swing

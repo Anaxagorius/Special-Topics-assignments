@@ -101,4 +101,62 @@ public class PlayerTest {
         assertTrue(result.contains("TestPlayer"));
         assertTrue(result.contains("Score:"));
     }
+
+    @Test
+    public void testInitialBalanceIsZeroByDefault() {
+        assertEquals(0, player.getBalance());
+    }
+
+    @Test
+    public void testConstructorWithInitialBalance() {
+        Player richPlayer = new Player("Rich", 500);
+        assertEquals(500, richPlayer.getBalance());
+    }
+
+    @Test
+    public void testAddBalance() {
+        Player p = new Player("Test", 100);
+        p.addBalance(50);
+        assertEquals(150, p.getBalance());
+    }
+
+    @Test
+    public void testAddBalanceIgnoresNonPositive() {
+        Player p = new Player("Test", 100);
+        p.addBalance(0);
+        p.addBalance(-10);
+        assertEquals(100, p.getBalance());
+    }
+
+    @Test
+    public void testDeductBalanceSuccess() {
+        Player p = new Player("Test", 100);
+        boolean result = p.deductBalance(40);
+        assertTrue(result);
+        assertEquals(60, p.getBalance());
+    }
+
+    @Test
+    public void testDeductBalanceExactAmount() {
+        Player p = new Player("Test", 100);
+        boolean result = p.deductBalance(100);
+        assertTrue(result);
+        assertEquals(0, p.getBalance());
+    }
+
+    @Test
+    public void testDeductBalanceInsufficientFunds() {
+        Player p = new Player("Test", 50);
+        boolean result = p.deductBalance(100);
+        assertFalse(result);
+        assertEquals(50, p.getBalance());
+    }
+
+    @Test
+    public void testDeductBalanceIgnoresNonPositive() {
+        Player p = new Player("Test", 100);
+        boolean result = p.deductBalance(0);
+        assertFalse(result);
+        assertEquals(100, p.getBalance());
+    }
 }
