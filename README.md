@@ -20,7 +20,7 @@ Card games are a universal form of entertainment and an excellent domain for lea
 - **Git** - Version control system
 - **GitHub** - Code hosting and collaboration platform
 - **VS Code** - Integrated development environment
-- **Maven/Gradle** (optional) - Build automation and dependency management
+- **Maven** - Build automation and dependency management
 
 ## Features
 
@@ -36,6 +36,7 @@ Card games are a universal form of entertainment and an excellent domain for lea
 
 ### Prerequisites
 - Java Development Kit (JDK) 17 or higher
+- [Apache Maven](https://maven.apache.org/download.cgi) 3.6 or higher
 - Git installed on your system
 - VS Code (recommended) or any Java IDE
 
@@ -47,20 +48,26 @@ Card games are a universal form of entertainment and an excellent domain for lea
    cd Special-Topics-assignments
    ```
 
-2. **Verify Java installation**
+2. **Verify Java and Maven installations**
    ```bash
    java --version
+   mvn --version
    ```
 
-3. **Compile the game**
+3. **Build the game**
    ```bash
-   cd src
-   javac *.java
+   mvn compile
    ```
 
 4. **Run the game**
    ```bash
-   java BlackjackGame
+   mvn exec:java
+   ```
+
+   Alternatively, you can build a JAR and run it directly:
+   ```bash
+   mvn package
+   java -cp target/blackjack-1.0.0.jar BlackjackGame
    ```
 
 ### VS Code Setup
@@ -84,7 +91,7 @@ If using VS Code, the repository includes configuration for Java development:
 This project is designed to be extended in several ways:
 
 ### Adding New Card Games
-1. Create new game classes in `src/` directory
+1. Create new game classes in the `src/main/java/` directory
 2. Reuse existing `Card`, `Deck`, and `Player` classes
 3. Implement game-specific rules and logic
 4. Examples: Poker, Go Fish, War, Crazy Eights
@@ -106,14 +113,16 @@ This project is designed to be extended in several ways:
 
 ### Project Structure
 ```
-cardgames-tb/
-├── src/              # Source code directory
-├── docs/             # Additional documentation
-├── .vscode/          # VS Code configuration
-├── README.md         # This file
-├── LICENSE           # Project license
-├── CONTRIBUTING.md   # Contribution guidelines
-└── CHANGELOG.md      # Version history
+Special-Topics-assignments/
+├── src/
+│   ├── main/java/        # Source code directory
+│   └── test/java/        # Unit tests directory
+├── .vscode/              # VS Code configuration
+├── pom.xml               # Maven build configuration
+├── README.md             # This file
+├── LICENSE               # Project license
+├── CONTRIBUTING.md       # Contribution guidelines
+└── CHANGELOG.md          # Version history
 ```
 
 ## Contributing
