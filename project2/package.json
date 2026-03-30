@@ -1,0 +1,13 @@
+{
+  "name": "ralph-wiggum-vibe-codes",
+  "version": "1.0.0",
+  "description": "Ralph Wiggum Vibe Codes - Project 2 web app",
+  "scripts": {
+    "build": "echo 'No build step required for static site'",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "serve": "^14.2.6"
+  }
+}

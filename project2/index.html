@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ralph Wiggum Vibe Codes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #fef9c3;
+        }
+        h1 {
+            color: #b45309;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        #quote {
+            font-size: 1.25rem;
+            color: #374151;
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            min-height: 2rem;
+        }
+        #vibe-code {
+            font-size: 1rem;
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+        }
+        button {
+            background-color: #f59e0b;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #d97706;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ralph Wiggum Vibe Codes</h1>
+    <p id="quote">Click the button to get your vibe!</p>
+    <p id="vibe-code"></p>
+    <button id="vibe-btn">Get Vibe</button>
+
+    <script>
+        const quotes = [
+            "I'm a glob of earwax shaped like a baseball glove. Also, I love you.",
+            "My cat's breath smells like cat food.",
+            "I found a moon rock in my nose!",
+            "Me fail English? That's unpossible.",
+            "Ralph: 'When I grow up, I want to be a principal or a caterpillar.'",
+            "I ate the blue ones... they taste like burning.",
+            "My daddy shoots people!",
+            "I heard your dad went to a restaurant and ate everything in the restaurant and they had to close the restaurant.",
+            "I'm a star! I'm a pretty, pretty star!",
+            "Can you open my milk? I'm too dumb."
+        ];
+
+        const vibeCodes = [
+            "VIBE-001: Chaotic-Neutral",
+            "VIBE-002: Confused-But-Happy",
+            "VIBE-003: Blissfully-Unaware",
+            "VIBE-004: Pure-Innocence",
+            "VIBE-005: Maximum-Derp",
+            "VIBE-006: Cat-Adjacent",
+            "VIBE-007: Moon-Rock-Energy",
+            "VIBE-008: Blue-Crayon-Mode",
+            "VIBE-009: Star-Power-Activated",
+            "VIBE-010: Earwax-Enlightened"
+        ];
+
+        document.getElementById('vibe-btn').addEventListener('click', function () {
+            const index = Math.floor(Math.random() * quotes.length);
+            document.getElementById('quote').textContent = quotes[index];
+            document.getElementById('vibe-code').textContent = vibeCodes[index];
+        });
+    </script>
+</body>
+</html>
