@@ -73,6 +73,10 @@ local.properties
 # Blackjack save files
 blackjack_save.dat
 
+# H2 database files
+*.mv.db
+*.trace.db
+
 # Node.js
 node_modules/
 npm-debug.log*
