@@ -3,23 +3,69 @@ import java.util.List;
 
 /**
  * Represents a player (or dealer) in a card game.
- * Manages the player's hand and score calculation.
+ * Manages the player's hand, score calculation, and balance.
  * 
  * @author Tom Burchell
- * @version 1.0
+ * @version 1.1
  */
 public class Player {
     private final String name;
     private final List<Card> hand;
+    private int balance;
 
     /**
-     * Constructor for Player class.
+     * Constructor for Player class with no initial balance.
      * 
      * @param name The name of the player
      */
     public Player(String name) {
+        this(name, 0);
+    }
+
+    /**
+     * Constructor for Player class with an initial balance.
+     * 
+     * @param name           The name of the player
+     * @param initialBalance The player's starting balance
+     */
+    public Player(String name, int initialBalance) {
         this.name = name;
         this.hand = new ArrayList<>();
+        this.balance = initialBalance;
+    }
+
+    /**
+     * Gets the player's current balance.
+     * 
+     * @return The player's balance
+     */
+    public int getBalance() {
+        return balance;
+    }
+
+    /**
+     * Adds an amount to the player's balance.
+     * 
+     * @param amount The amount to add (must be positive)
+     */
+    public void addBalance(int amount) {
+        if (amount > 0) {
+            balance += amount;
+        }
+    }
+
+    /**
+     * Deducts an amount from the player's balance.
+     * 
+     * @param amount The amount to deduct (must be positive and not exceed balance)
+     * @return true if the deduction was successful, false otherwise
+     */
+    public boolean deductBalance(int amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            return true;
+        }
+        return false;
     }
 
     /**
