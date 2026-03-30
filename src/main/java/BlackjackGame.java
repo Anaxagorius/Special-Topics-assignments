@@ -55,13 +55,24 @@ public class BlackjackGame {
      * @param players the human players who will participate
      */
     public BlackjackGame(List<Player> players) {
+        this(players, new Scanner(System.in));
+    }
+
+    /**
+     * Creates a game with the given list of players and a custom Scanner.
+     * Intended for unit-testing with simulated input.
+     *
+     * @param players the human players who will participate
+     * @param scanner the Scanner to use for input
+     */
+    BlackjackGame(List<Player> players, Scanner scanner) {
         if (players == null || players.isEmpty()) {
             throw new IllegalArgumentException("At least one player is required.");
         }
         this.players  = new ArrayList<>(players);
         this.deck     = new Deck();
         this.dealer   = new Player("Dealer");
-        this.scanner  = new Scanner(System.in);
+        this.scanner  = scanner;
         this.stats    = new LinkedHashMap<>();
         for (Player p : this.players) {
             stats.put(p, new int[3]); // index 0=wins, 1=losses, 2=ties
@@ -352,7 +363,7 @@ public class BlackjackGame {
      * @param hands    mutable list of that player's active hands (starts with one)
      * @param handBets mutable list of bets corresponding to each hand
      */
-    private void playPlayerTurn(Player p, List<List<Card>> hands, List<Integer> handBets) {
+    void playPlayerTurn(Player p, List<List<Card>> hands, List<Integer> handBets) {
         int handIndex = 0;
         while (handIndex < hands.size()) {
             List<Card> hand = hands.get(handIndex);

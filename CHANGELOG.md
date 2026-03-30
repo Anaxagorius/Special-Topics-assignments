@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Split**: Players can split two equal-rank starting cards into two independent hands; an extra bet equal to the original is placed for the second hand
+- **Double Down**: Players can double their bet on the first action to receive exactly one additional card and automatically stand
 - Betting system with virtual currency (player starts with $100 per session)
 - Statistics tracking: wins, losses, and ties displayed at end of session
 - Input validation with clear error messages for invalid hit/stand input
