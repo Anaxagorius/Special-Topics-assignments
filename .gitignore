@@ -69,3 +69,11 @@ nbdist/
 *.swp
 *~.nib
 local.properties
+
+# Node.js
+node_modules/
+npm-debug.log*
+
+# Playwright
+playwright-report/
+test-results/
