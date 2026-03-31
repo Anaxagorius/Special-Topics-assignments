@@ -34,5 +34,13 @@ jobs:
         working-directory: project2
 
       - name: Run Playwright tests
-        run: npx playwright test
+        run: npx playwright test --reporter=list
         working-directory: project2
+
+      - name: Upload Playwright report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: project2/playwright-report/
+          retention-days: 30
