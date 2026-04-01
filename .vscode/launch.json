@@ -3,11 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch HomeGUI",
+            "request": "launch",
+            "mainClass": "HomeGUI",
+            "projectName": "Special-Topics-assignments",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "java",
             "name": "Launch BlackjackGame",
             "request": "launch",
             "mainClass": "BlackjackGame",
             "projectName": "Special-Topics-assignments",
-            "cwd": "${workspaceFolder}/src/main/java"
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
         },
         {
             "type": "java",
@@ -15,7 +24,7 @@
             "request": "launch",
             "mainClass": "BlackjackGame",
             "projectName": "Special-Topics-assignments",
-            "cwd": "${workspaceFolder}/src/main/java",
+            "cwd": "${workspaceFolder}",
             "console": "integratedTerminal"
         }
     ]
