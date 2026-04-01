@@ -1,0 +1,23 @@
+# Version control
+.git
+.gitignore
+
+# Build output
+target/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test artifacts
+**/*.class
+
+# Documentation (not needed in container)
+docs/
+*.md
+LICENSE
